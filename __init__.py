@@ -36,17 +36,15 @@ def putRequest():
         myquery = { "name": doc["name"] }
         newvalues = { "$set": { "name": new_name }}
         mydb.customers.update_one(myquery, newvalues)
-        print("in name")
+        # print("in name")
     if new_address:
         myquery = { "address": doc['address'] }
         newvalues = { "$set": { "address": new_address } }
         mydb.customers.update_one(myquery, newvalues)
-        print("in address")
+        # print("in address")
 
-    
-
-    print(new_name)
-    print(new_address)
+    # print(new_name)
+    # print(new_address)
     return 'put finish'
 
 @app.route('/request/<name>', methods=['DELETE'])
